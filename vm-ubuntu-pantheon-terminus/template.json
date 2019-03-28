@@ -84,7 +84,7 @@
             }
         },
         "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-        "machineToken": "[parameters('pantheonMachineToken')"
+        "machineToken": "[parameters('pantheonMachineToken')]"
     },
     "resources": [
         {
@@ -229,7 +229,7 @@
                             "fileUris": [
                                 "https://raw.githubusercontent.com/brharp/azure-resource-manager-templates/master/vm-ubuntu-pantheon-terminus/install-terminus.sh"
                             ],
-                            "commandToExecute": "[concat('./install-terminus.sh ', variables('machineToken'))]"
+                            "commandToExecute": "[concat('sh install-terminus.sh ', variables('machineToken'))]"
                         }
                     }
                 }
