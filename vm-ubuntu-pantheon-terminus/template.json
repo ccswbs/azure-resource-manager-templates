@@ -205,10 +205,13 @@
                 {
                     "apiVersion": "2018-10-01",
                     "type": "extensions",
-                    "name": "config-app",
+                    "name": "install-terminus",
                     "location": "[resourceGroup().location]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+                    ],
                     "tags": {
-                        "displayName": "config-app"
+                        "displayName": "install-terminus"
                     },
                     "properties": {
                         "publisher": "Microsoft.Azure.Extensions",
@@ -217,10 +220,8 @@
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "fileUris": [
-                                "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"
-                            ]
-                        },
-                        "protectedSettings": {
+                                "https://raw.githubusercontent.com/brharp/azure-resource-manager-templates/master/vm-ubuntu-pantheon-terminus/install-terminus.sh"
+                            ],
                             "commandToExecute": "./install-terminus.sh"
                         }
                     }

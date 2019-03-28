@@ -1,5 +1,7 @@
 
 
+New-AzResourceGroupDeployment -Name terminus -ResourceGroupName pantheon-automation -TemplateFile .\template.json -TemplateParameterFile .\parameters.json -Mode Complete
+
 # Prerequisites
 
 - Install-Module Az
