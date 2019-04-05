@@ -1,14 +1,19 @@
+# Overview
 
+This template creates a Ubuntu VM on Azure with [Pantheon Terminus](https://pantheon.io/docs/terminus/) installed and authorized to your account using a Pantheon machine token. 
 
-New-AzResourceGroupDeployment -Name terminus -ResourceGroupName pantheon-automation -TemplateFile .\template.json -TemplateParameterFile .\parameters.json -Mode Complete
+# Usage
 
-# Prerequisites
+- Create a Pantheon [machine token](https://pantheon.io/docs/machine-tokens/)
+- Create a new Azure resource deployment using the method below, passing your machine token as an argument
+- Log in the the Ubuntu VM as user `wsadmin` using the password you provided
 
-- Install-Module Az
-- Install-Module AzureRM
-- Install-Module Az.Account
+## PowerShell
 
-Before running deploy.ps1, you may find it convenient to authenticate with Azure by running 
-`Connect-AzureAccount` (requires the Az.Account module to be installed and enabled, 
-run `Install-Module Az.Account` as Administrator and then `Import-Module Az.Account`.)
+```powershell
+New-AzResourceGroupDeployment -Name terminus -ResourceGroupName pantheon-automation -TemplateFile .\template.json -TemplateParameterFile .\parameters.json -Mode Complete  -pantheonMachineToken [machine-token] -adminPasswordOrKey (convertto-securestring 'Pa55W0rd!' -asplaintext -force)  -Verbose
+```
 
+# Customization
+
+See `parameters.json` and `template.json` for available parameters (such as user account name.)
