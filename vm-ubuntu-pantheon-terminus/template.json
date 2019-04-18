@@ -70,7 +70,7 @@
         "publicIPAddressName": "myPublicIP",
         "publicIPAddressType": "Dynamic",
         "vmName": "MyUbuntuVM",
-        "vmSize": "Standard_A1",
+        "vmSize": "Standard_B1s",
         "virtualNetworkName": "MyVNET",
         "linuxConfiguration": {
             "disablePasswordAuthentication": true,
@@ -188,7 +188,7 @@
                     },
                     "dataDisks": [
                         {
-                            "diskSizeGB": 1023,
+                            "diskSizeGB": 10,
                             "lun": 0,
                             "createOption": "Empty"
                         }
