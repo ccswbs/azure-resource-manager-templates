@@ -7,9 +7,9 @@ If no zone is specified, uoguelph.dev is assumed.
 
 For example, to create the record:
 
-| Name      | Type  | Value                 |
-|-----------|-------|-----------------------|
-| testalias | CNAME | testcname.example.com |
+| Name                   | Type  | Value                 |
+|------------------------|-------|-----------------------|
+| testalias.uoguelph.dev | CNAME | testcname.example.com |
 
 Link to the template like so:
 
