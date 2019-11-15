@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": { "type": "string" },
+    "location": { "type": "string" },
+    "skuName": { "type": "string", "defaultValue": "Standard", "allowedValues": [ "Standard", "standard", "Premium", "premium" ] },
+    "accessPolicies": { "type": "array", "defaultValue": [] },
+    "tenant": { "type": "string" },
+    "enabledForDeployment": { "type": "bool" },
+    "enabledForTemplateDeployment": { "type": "bool" },
+    "enabledForDiskEncryption": { "type": "bool" },
+    "networkAcls": { "type": "object" }
+  },
+  "resources": [
+    {
+      "name": "[parameters('name')]",
+      "type": "Microsoft.KeyVault/vaults",
+      "apiVersion": "2016-10-01",
+      "location": "[parameters('location')]",
+      "tags": {},
+      "properties": {
+        "enabledForDeployment": "[parameters('enabledForDeployment')]",
+        "enabledForTemplateDeployment": "[parameters('enabledForTemplateDeployment')]",
+        "enabledForDiskEncryption": "[parameters('enabledForDiskEncryption')]",
+        "tenantId": "[parameters('tenant')]",
+        "accessPolicies": "[parameters('accessPolicies')]",
+        "sku": {
+            "name": "[parameters('sku')]",
+            "family": "A"
+        },
+        "networkAcls":  "[parameters('networkAcls')]"
+      }
+    }
+  ]
+}
