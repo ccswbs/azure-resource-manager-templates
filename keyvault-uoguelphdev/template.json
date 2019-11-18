@@ -29,7 +29,9 @@
             "name": "[parameters('sku')]",
             "family": "A"
         },
-        "networkAcls": "[parameters('networkAcls')]"
+        "networkAcls": {
+          "value": "[parameters('networkAcls')]"
+        }
       }
     }
   ]
