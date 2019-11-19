@@ -10,7 +10,7 @@
     "enabledForDeployment": { "type": "bool" },
     "enabledForTemplateDeployment": { "type": "bool" },
     "enabledForDiskEncryption": { "type": "bool" },
-    "networkAcls": { "type": "object" }
+    "networkAcls": { "type": "object", "defaultValue": "{}" }
   },
   "resources": [
     {
