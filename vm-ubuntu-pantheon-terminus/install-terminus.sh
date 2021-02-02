@@ -6,5 +6,6 @@ cd /opt/terminus
 sudo curl -O https://raw.githubusercontent.com/pantheon-systems/terminus-installer/master/builds/installer.phar
 sudo php installer.phar install
 sudo -u wsadmin terminus auth:login --machine-token=$1
+sudo -i -u wsadmin sh -c "terminus ssh-key:list --field=id | xargs -n1 terminus ssh-key:remove"
 sudo -u wsadmin ssh-keygen -f ~wsadmin/.ssh/id_rsa -N ''
 sudo -u wsadmin terminus ssh-key:add ~wsadmin/.ssh/id_rsa.pub
