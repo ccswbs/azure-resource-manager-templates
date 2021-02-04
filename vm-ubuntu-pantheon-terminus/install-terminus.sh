@@ -1,8 +1,8 @@
 #!/bin/bash
-mkdir ~/terminus && cd ~/terminus
+sudo apt update
+sudo apt -y install php-xml php-cli php-curl
 curl -L https://github.com/pantheon-systems/terminus/releases/download/$(curl --silent "https://api.github.com/repos/pantheon-systems/terminus/releases/latest" | perl -nle'print $& while m{"tag_name": "\K.*?(?=")}g')/terminus.phar --output terminus
-chmod +x terminus
-sudo ln -s ~/terminus/terminus /usr/local/bin/terminus
+sudo install terminus /usr/local/bin
 terminus auth:login --machine-token=$1
 terminus ssh-key:list --field=id | xargs -n1 terminus ssh-key:remove
 ssh-keygen -f ~wsadmin/.ssh/id_rsa -N ''
