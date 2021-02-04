@@ -227,7 +227,7 @@
                         "autoUpgradeMinorVersion": true,
                         "settings": {
                             "fileUris": [
-                                "https://raw.githubusercontent.com/brharp/azure-resource-manager-templates/master/vm-ubuntu-pantheon-terminus/install-terminus.sh"
+                                "https://raw.githubusercontent.com/ccswbs/azure-resource-manager-templates/master/vm-ubuntu-pantheon-terminus/install-terminus.sh"
                             ],
                             "commandToExecute": "[concat('sh install-terminus.sh ', variables('machineToken'))]"
                         }
