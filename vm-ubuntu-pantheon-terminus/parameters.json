@@ -9,7 +9,7 @@
         "value": "password"
       },
       "dnsLabelPrefix": {
-        "value": "ccs-wbs-vm-terminus-eastus"
+        "value": "ccs-wbs-vm-terminus"
       }
     }
   }
