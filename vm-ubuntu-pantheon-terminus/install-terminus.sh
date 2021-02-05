@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt -y install php-xml php-cli php-curl
+sudo apt -y install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath
 curl -L https://github.com/pantheon-systems/terminus/releases/download/$(curl --silent "https://api.github.com/repos/pantheon-systems/terminus/releases/latest" | perl -nle'print $& while m{"tag_name": "\K.*?(?=")}g')/terminus.phar --output terminus
 sudo install terminus /usr/local/bin
 sudo -i -u wsadmin sh <<HERE
